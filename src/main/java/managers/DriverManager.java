@@ -44,12 +44,15 @@ public class DriverManager {
 		}
 
 		driver.manage().window().maximize();
+		
+		
 
 		ExtentTestManager.log.info("Window is maximized");
 
 	}
 
 	public static WebDriver getDriver() {
+		
 		return driver;
 
 	}

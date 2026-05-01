@@ -16,6 +16,8 @@ public class WaitUtils {
 
 	public static void initWait() {
 
+		System.out.println("Initializing wait");
+
 		wait = new WebDriverWait(DriverManager.getDriver(),
 				Duration.ofSeconds(Integer.valueOf(BaseUtils.getConfigValue("explicitwait"))));
 	}
@@ -28,12 +30,22 @@ public class WaitUtils {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
+	public static List<WebElement> getListOfElements(By locator) {
+		return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+	}
+
 	public static WebElement getText(By locator) {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
-	public static List<WebElement> getTextOfList(By locator) {
-		return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-		
+	public static String getTextOfList(By locator) {
+		List<WebElement> ele = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+		String text = null;
+
+		for (WebElement element : ele) {
+			text = element.getText();
+		}
+		return text;
+
 	}
 }
