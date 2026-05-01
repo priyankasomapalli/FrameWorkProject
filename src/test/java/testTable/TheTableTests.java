@@ -1,5 +1,8 @@
 package testTable;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,15 +15,17 @@ public class TheTableTests extends BaseTestForFrameWork {
 	@Test
 	public void languageFilterTest() {
 
-		tpObj.clickJavaCheckBox();
+		tpObj.selectJava();
 
-		tpObj.getJavaElementList("Java elements");
+		List<WebElement> javaElements = tpObj.getJavaElements();
+		Assert.assertFalse(javaElements.isEmpty(), "No Java elements found!");
 
-		String text = tpObj.getJavaEleText("Java elements text");
+		for (WebElement ele : javaElements) {
+			String text = ele.getText();
+			System.out.println(text);
 
-		System.out.println("Text of Java elements is ::  " + text);
-
-		Assert.assertTrue(true, "Java");
+			Assert.assertTrue(text.toLowerCase().contains("java"), "Expected text to contain 'Java', and got: " + text);
+		}
 
 	}
 
@@ -28,17 +33,21 @@ public class TheTableTests extends BaseTestForFrameWork {
 
 	public void beginnerLevelTest() {
 
-		tpObj.clcikAdvancedCheckBox();
+		tpObj.deselectIntermediate();
 
-		tpObj.clcikIntermediateCheckBox();
+		tpObj.deselectAdvanced();
 
-		tpObj.getBeginnerElementList("BeginnerElements");
+		List<WebElement> beginnerElements = tpObj.getBeginnerElements();
 
-		String text = tpObj.getBegginerElementsText("Beginner level elements text");
+		Assert.assertFalse(beginnerElements.isEmpty(), "No Beginner elements found!");
+		for (WebElement ele : beginnerElements) {
+			String text = ele.getText();
+			System.out.println(text);
+			Assert.assertTrue(text.toLowerCase().contains("beginner"),
+					"Expected text to contain 'Beginner', and got: " + text);
 
-		System.out.println("Text of Beginner elements is ::  " + text);
+		}
 
-		Assert.assertTrue(true, "Beginner");
 	}
 
 }

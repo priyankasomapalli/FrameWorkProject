@@ -16,7 +16,7 @@ public class UserInterfaceActionsUtils {
 	}
 
 	public static String getTextOfList(By locator, String name) {
-		ExtentTestManager.log.info("Getting the text of sorted " +name +" list :  ");
+		ExtentTestManager.log.info("Fetching text from list: " + name);
 		
 
 		return WaitUtils.getTextOfList(locator);
