@@ -33,9 +33,9 @@ public class TheTableTests extends BaseTestForFrameWork {
 
 	public void beginnerLevelTest() {
 
-		tpObj.deselectIntermediate();
+		tpObj.uncheckIntermediate();
 
-		tpObj.deselectAdvanced();
+		tpObj.uncheckAdvanced();
 
 		List<WebElement> beginnerElements = tpObj.getBeginnerElements();
 
@@ -50,4 +50,33 @@ public class TheTableTests extends BaseTestForFrameWork {
 
 	}
 
+	@Test
+
+	public void minEnrollTest() {
+		tpObj.selectminEnrollment();
+		tpObj.selectTenThousandValue();
+		List<WebElement> sortedList = tpObj.getMinEnrollmentList();
+		for (WebElement ele : sortedList) {
+			String value = ele.getText();
+			// String value=value.parseInt(value);
+			Assert.assertTrue(Integer.valueOf(value) >= 10000);
+
+		}
+		System.out.println("All the values are  greater than 10000");
+	}
+
+	@Test
+	public void combinedFilterTest()
+	{
+		tpObj.selectPython();
+		tpObj.uncheckAdvanced();
+		tpObj.uncheckIntermediate();
+		tpObj.selectTenThousandValue();
+		List<WebElement> beginnerList=tpObj.getBeginnerElements();
+		List<WebElement> pythonList=tpObj.getPythonElements();
+		List<WebElement> minEnrollList=tpObj.getMinEnrollmentList();
+		
+		
+		
+	}
 }

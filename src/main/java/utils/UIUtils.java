@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import managers.ExtentTestManager;
 
-public class UserInterfaceActionsUtils {
+public class UIUtils {
 
 	public static void click(By locator, String name) {
 		WaitUtils.clickElement(locator);
