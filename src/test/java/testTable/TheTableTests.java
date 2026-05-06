@@ -13,7 +13,7 @@ public class TheTableTests extends BaseTestForFrameWork {
 	TitlePage tpObj = new TitlePage();
 
 	@Test
-	public void languageFilterTest() {
+	public void languageFilterTest1() {
 
 		tpObj.selectJava();
 
@@ -31,7 +31,7 @@ public class TheTableTests extends BaseTestForFrameWork {
 
 	@Test
 
-	public void beginnerLevelTest() {
+	public void beginnerLevelTest2() {
 
 		tpObj.uncheckIntermediate();
 
@@ -52,7 +52,7 @@ public class TheTableTests extends BaseTestForFrameWork {
 
 	@Test
 
-	public void minEnrollTest() {
+	public void minEnrollTest3() {
 		tpObj.selectminEnrollment();
 		tpObj.selectTenThousandValue();
 		List<WebElement> sortedList = tpObj.getMinEnrollmentList();
@@ -66,17 +66,48 @@ public class TheTableTests extends BaseTestForFrameWork {
 	}
 
 	@Test
-	public void combinedFilterTest()
-	{
+	public void combinedFilterTest4() {
 		tpObj.selectPython();
 		tpObj.uncheckAdvanced();
 		tpObj.uncheckIntermediate();
+		tpObj.selectminEnrollment();
 		tpObj.selectTenThousandValue();
-		List<WebElement> beginnerList=tpObj.getBeginnerElements();
-		List<WebElement> pythonList=tpObj.getPythonElements();
-		List<WebElement> minEnrollList=tpObj.getMinEnrollmentList();
-		
-		
-		
+		List<WebElement> beginnerList = tpObj.getBeginnerElements();
+		System.out.println("Size is :" +beginnerList.size());
+		for (WebElement ele : beginnerList) {
+			String text = ele.getText();
+			System.out.println("The text on beginner list is ::" +text);
+			Assert.assertEquals(text, "Beginner");
+
+		}
+
+		// Assert.assertEquals(false, null);
+		List<WebElement> pythonList = tpObj.getPythonElements();
+		for (WebElement ele : pythonList) {
+			String text = ele.getText();
+			Assert.assertEquals(text, "Python");
+		}
+
+		List<WebElement> minEnrollList = tpObj.getMinEnrollmentList();
+		for (WebElement ele : minEnrollList) {
+			String text = ele.getText();
+			Assert.assertTrue(Integer.valueOf(text) >= 10000);
+		}
+
+		System.out.println("Only python and beginner elements with enrollments more tha 10000 are visible");
+
 	}
+	
+	@Test
+	
+	public void noResultsStateTest5()
+	{
+		tpObj.selectPython();
+	tpObj.unCheckBeginner();
+	String text=tpObj.getTextOfNoMatchingResults();
+	System.out.println("The text for the above filters is :: " +text);
+	Assert.assertTrue(text.contains("No matching courses."));
+	
+	}
+	
 }

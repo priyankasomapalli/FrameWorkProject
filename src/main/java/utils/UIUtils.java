@@ -30,4 +30,10 @@ public class UIUtils {
 
 		return WaitUtils.getListOfElements(locator);
 	}
+	public static String getText(By locator,String title)
+	{
+		ExtentTestManager.log.info("Getting text of the element :  "+title);
+		
+		return WaitUtils.getText(locator);
+	}
 }

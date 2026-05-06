@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-05T00:14:24 EDT" name="Default suite" finished-at="2026-05-05T00:14:27 EDT" duration-ms="2890">
+  <suite started-at="2026-05-05T23:26:17 EDT" name="Default suite" finished-at="2026-05-05T23:26:19 EDT" duration-ms="2768">
     <groups>
     </groups>
-    <test started-at="2026-05-05T00:14:24 EDT" name="Default test" finished-at="2026-05-05T00:14:27 EDT" duration-ms="2890">
+    <test started-at="2026-05-05T23:26:17 EDT" name="Default test" finished-at="2026-05-05T23:26:19 EDT" duration-ms="2768">
       <class name="testTable.TheTableTests">
-        <test-method is-config="true" signature="initialise()[pri:0, instance:testTable.TheTableTests@48bb62]" started-at="2026-05-05T00:14:24 EDT" name="initialise" finished-at="2026-05-05T00:14:24 EDT" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="initialise()[pri:0, instance:testTable.TheTableTests@2767e23c]" started-at="2026-05-05T23:26:17 EDT" name="initialise" finished-at="2026-05-05T23:26:17 EDT" duration-ms="166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialise -->
-        <test-method is-config="true" signature="preReq(java.lang.reflect.Method)[pri:0, instance:testTable.TheTableTests@48bb62]" started-at="2026-05-05T00:14:24 EDT" name="preReq" finished-at="2026-05-05T00:14:26 EDT" duration-ms="2453" status="PASS">
+        <test-method is-config="true" signature="preReq(java.lang.reflect.Method)[pri:0, instance:testTable.TheTableTests@2767e23c]" started-at="2026-05-05T23:26:17 EDT" name="preReq" finished-at="2026-05-05T23:26:19 EDT" duration-ms="2414" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void testTable.TheTableTests.minEnrollTest()]]>
+                <![CDATA[public void testTable.TheTableTests.noResultsStateTest5()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preReq -->
-        <test-method signature="minEnrollTest()[pri:0, instance:testTable.TheTableTests@48bb62]" started-at="2026-05-05T00:14:26 EDT" name="minEnrollTest" finished-at="2026-05-05T00:14:27 EDT" duration-ms="238" status="PASS">
+        <test-method signature="noResultsStateTest5()[pri:0, instance:testTable.TheTableTests@2767e23c]" started-at="2026-05-05T23:26:19 EDT" name="noResultsStateTest5" finished-at="2026-05-05T23:26:19 EDT" duration-ms="197" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- minEnrollTest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testTable.TheTableTests@48bb62]" started-at="2026-05-05T00:14:27 EDT" name="tearDown" finished-at="2026-05-05T00:14:27 EDT" duration-ms="180" status="PASS">
+        </test-method> <!-- noResultsStateTest5 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testTable.TheTableTests@2767e23c]" started-at="2026-05-05T23:26:19 EDT" name="tearDown" finished-at="2026-05-05T23:26:19 EDT" duration-ms="133" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=minEnrollTest status=SUCCESS method=TheTableTests.minEnrollTest()[pri:0, instance:testTable.TheTableTests@48bb62] output={null}]]]>
+                <![CDATA[[TestResult name=noResultsStateTest5 status=SUCCESS method=TheTableTests.noResultsStateTest5()[pri:0, instance:testTable.TheTableTests@2767e23c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:testTable.TheTableTests@48bb62]" started-at="2026-05-05T00:14:27 EDT" name="flushReport" finished-at="2026-05-05T00:14:27 EDT" duration-ms="165" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:testTable.TheTableTests@2767e23c]" started-at="2026-05-05T23:26:19 EDT" name="flushReport" finished-at="2026-05-05T23:26:20 EDT" duration-ms="170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->
